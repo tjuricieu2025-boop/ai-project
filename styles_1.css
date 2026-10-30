@@ -1,0 +1,183 @@
+:root {
+  --paper: #f6f1e7;
+  --card: #fffdf8;
+  --ink: #17181c;
+  --muted: #4a4d55;
+  --accent: #b83c0a;
+  --line: #d9d1bf;
+  --fact: #0f5132;
+  --interp: #5b2a86;
+  --pred: #8a4b00;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--ink);
+  color: #fff;
+  padding: .6rem 1rem;
+  z-index: 10;
+}
+.skip:focus { top: 1rem; }
+
+.hero, main, footer {
+  width: min(100% - 2rem, 46rem);
+  margin-inline: auto;
+}
+
+.hero { padding: 3rem 0 1.5rem; border-bottom: 3px solid var(--ink); }
+
+.eyebrow {
+  font-family: system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 .5rem;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 8vw, 4.2rem);
+  line-height: 1.02;
+  margin: 0 0 1rem;
+  letter-spacing: -.02em;
+}
+h1 span { color: var(--accent); font-style: italic; }
+
+.lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.5rem; }
+
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
+
+.filters button {
+  font: 600 1rem system-ui, sans-serif;
+  min-height: 44px;
+  padding: .5rem 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.filters button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.filters button[aria-pressed="true"]::before { content: "\2713\00a0"; }
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  font-family: system-ui, sans-serif;
+  font-size: .95rem;
+}
+
+main { padding: 1rem 0 2rem; }
+
+section { padding: 2rem 0 .5rem; scroll-margin-top: 1rem; }
+
+h2 {
+  font-size: 1.9rem;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+}
+.num {
+  font-family: system-ui, sans-serif;
+  font-size: .9rem;
+  color: var(--accent);
+  letter-spacing: .08em;
+}
+
+h3 { font-size: 1.2rem; margin: 0 0 .5rem; }
+
+.claim { margin: 0 0 1rem; transition: opacity .2s; }
+
+.tag {
+  display: inline-block;
+  font: 700 .72rem/1 system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: .3rem .5rem;
+  margin-right: .4rem;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  vertical-align: .1em;
+}
+[data-type="fact"] .tag { color: var(--fact); }
+[data-type="interpretation"] .tag { color: var(--interp); border-style: dashed; }
+[data-type="prediction"] .tag { color: var(--pred); border-style: dotted; }
+
+.claim.dim { opacity: .28; }
+
+.case {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent);
+  border-radius: 6px;
+  padding: 1rem 1.25rem .25rem;
+  margin: 1.25rem 0;
+}
+
+figure { margin: 1.5rem 0; }
+figure svg { width: 100%; height: auto; display: block; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+figcaption { font: .9rem system-ui, sans-serif; color: var(--muted); margin-top: .5rem; }
+
+code { font-size: .95em; background: #ebe4d2; padding: .1em .3em; border-radius: 3px; }
+
+.ack {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.sources { font: .95rem/1.5 system-ui, sans-serif; padding-left: 1.5rem; }
+.sources li { margin-bottom: .5rem; padding-left: .25rem; }
+.sources li:target { background: #ffe9c7; }
+
+footer {
+  border-top: 3px solid var(--ink);
+  padding: 1rem 0 2rem;
+  font: .9rem system-ui, sans-serif;
+  color: var(--muted);
+}
+
+@media (min-width: 40rem) {
+  body { font-size: 1.2rem; }
+  .hero { padding-top: 4.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .claim { transition: none; }
+}

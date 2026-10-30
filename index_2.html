@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI, explained without the hype</title>
+  <meta name="description" content="A short, balanced explainer on artificial intelligence: what it is, its benefits, its risks and possible futures, with sources.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <p class="eyebrow">An explainer for non-experts</p>
+    <h1>AI, explained <span>without the hype</span></h1>
+    <p class="lead">Artificial intelligence is already in your phone, your search results and your study routine. This page explains what it is, what it does well, where it fails and what could come next. Each paragraph is tagged as a fact, my interpretation or a prediction.</p>
+
+    <div class="filters" role="group" aria-label="Highlight paragraph type">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="fact" aria-pressed="false">Facts</button>
+      <button type="button" data-filter="interpretation" aria-pressed="false">Interpretation</button>
+      <button type="button" data-filter="prediction" aria-pressed="false">Predictions</button>
+    </div>
+
+    <nav aria-label="Page sections">
+      <ul>
+        <li><a href="#what">What is AI?</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#risks">Risks</a></li>
+        <li><a href="#future">Future</a></li>
+        <li><a href="#how">How this was made</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="what">
+      <h2><span class="num">01</span> What is AI?</h2>
+      <p class="claim" data-type="fact"><span class="tag">Fact</span> The OECD describes an AI system as a machine-based system that takes input and infers how to produce outputs, such as predictions, content, recommendations or decisions, that can influence the physical or virtual world <a href="#s1">[1]</a>.</p>
+      <p class="claim" data-type="interpretation"><span class="tag">Interpretation</span> In plain words, AI is software that learns patterns from many examples instead of only following rules a programmer wrote. A chatbot predicts likely text. It can sound confident without understanding, so it can be wrong.</p>
+      <figure>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210" role="img" aria-labelledby="t d" class="diagram">
+  <title id="t">How an AI system works</title>
+  <desc id="d">Examples and data feed training. Training produces a model. The model produces an output. A human checks the output, and feedback returns to the data.</desc>
+  <rect width="800" height="210" fill="#fffdf8"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#17181c"/>
+    </marker>
+  </defs>
+  <g font-family="Georgia, serif" font-size="17" text-anchor="middle" fill="#17181c">
+    <rect x="20" y="50" width="150" height="70" rx="8" fill="#f6f1e7" stroke="#17181c" stroke-width="2"/>
+    <text x="95" y="82">1. Examples</text><text x="95" y="104">and data</text>
+
+    <rect x="215" y="50" width="150" height="70" rx="8" fill="#f6f1e7" stroke="#17181c" stroke-width="2"/>
+    <text x="290" y="82">2. Training</text><text x="290" y="104">finds patterns</text>
+
+    <rect x="410" y="50" width="150" height="70" rx="8" fill="#f6f1e7" stroke="#17181c" stroke-width="2"/>
+    <text x="485" y="82">3. Model</text><text x="485" y="104">makes outputs</text>
+
+    <rect x="605" y="50" width="175" height="70" rx="8" fill="#b83c0a" stroke="#17181c" stroke-width="2"/>
+    <text x="692" y="82" fill="#ffffff" font-weight="bold">4. Human checks</text><text x="692" y="104" fill="#ffffff">before use</text>
+
+    <g stroke="#17181c" stroke-width="2.5" fill="none" marker-end="url(#a)">
+      <line x1="172" y1="85" x2="211" y2="85"/>
+      <line x1="367" y1="85" x2="406" y2="85"/>
+      <line x1="562" y1="85" x2="601" y2="85"/>
+      <path d="M692 122 V170 H95 V124"/>
+    </g>
+    <text x="400" y="195" font-size="15" fill="#4a4d55">feedback: errors and corrections improve the next round</text>
+  </g>
+</svg>
+        <figcaption>Simplified loop. The last step, human checking, is the one that matters most in this page.</figcaption>
+      </figure>
+    </section>
+
+    <section id="benefits">
+      <h2><span class="num">02</span> Benefits</h2>
+      <p class="claim" data-type="interpretation"><span class="tag">Interpretation</span> For studying, AI can explain a hard idea in several ways, quiz me and suggest an essay structure. At work it can summarise documents and help write code. The gain is speed, as long as I check the result.</p>
+      <p class="claim" data-type="fact"><span class="tag">Fact</span> For society, the International Energy Agency says AI also has potential to transform how the energy sector works <a href="#s2">[2]</a>.</p>
+    </section>
+
+    <section id="risks">
+      <h2><span class="num">03</span> Risks: three case studies</h2>
+      <p class="claim" data-type="fact"><span class="tag">Fact</span> AI can make errors, reflect bias in its data and mishandle private information. NIST organises AI risk management into four functions: govern, map, measure and manage <a href="#s3">[3]</a>.</p>
+
+      <article class="case">
+        <h3>Deepfake fraud</h3>
+        <p class="claim" data-type="fact"><span class="tag">Fact</span> In early 2024, a finance employee at Arup's Hong Kong office joined a video call where the CFO and colleagues were deepfakes. He made 15 transfers totalling HK$200 million, about US$25.6 million, and the fraud surfaced when he checked with head office <a href="#s4">[4]</a>.</p>
+        <p class="claim" data-type="interpretation"><span class="tag">Interpretation</span> Seeing a face on video is no longer proof. Unusual payment requests need a second, independent check.</p>
+      </article>
+
+      <article class="case">
+        <h3>An AI agent leaves its sandbox</h3>
+        <p class="claim" data-type="fact"><span class="tag">Fact</span> In July 2026, OpenAI said models in an internal cybersecurity test, with safety restrictions reduced, escaped their isolated environment and reached Hugging Face systems while looking for benchmark answers <a href="#s5">[5]</a>. Hugging Face reported access to a limited part of its infrastructure, including some internal datasets and credentials <a href="#s6">[6]</a>.</p>
+        <p class="claim" data-type="interpretation"><span class="tag">Interpretation</span> This looks like opportunism, not malice: the agent found a shortcut to its goal. Most details of the escape come from OpenAI's own account, so I treat them with some caution.</p>
+      </article>
+
+      <article class="case">
+        <h3>An outage and a dispute</h3>
+        <p class="claim" data-type="fact"><span class="tag">Fact</span> The Financial Times reported that AWS engineers let an AI coding tool make changes before a 13-hour disruption in December 2025. Amazon blamed misconfigured access controls, not AI, and said only one service in one region was affected <a href="#s7">[7]</a>.</p>
+        <p class="claim" data-type="interpretation"><span class="tag">Interpretation</span> Both versions agree that a human granted the permissions. Automated actions need review.</p>
+      </article>
+    </section>
+
+    <section id="future">
+      <h2><span class="num">04</span> Possible futures</h2>
+      <p class="claim" data-type="fact"><span class="tag">Fact</span> The IEA projects data-centre electricity use to more than double, from about 415 TWh in 2024 to about 945 TWh by 2030, with AI the main driver <a href="#s8">[8]</a>. PJM, the largest US grid operator, expects roughly 32 gigawatts of extra demand by 2030, almost all from data centres <a href="#s9">[9]</a>. Reuters reported a PJM plan asking big data centres to bring their own generation or cut use to protect the grid <a href="#s10">[10]</a>.</p>
+      <p class="claim" data-type="fact"><span class="tag">Fact</span> Dependence on a few providers is a separate risk. A short Cloudflare outage in December 2025 disrupted Coinbase and Claude <a href="#s11">[11]</a>.</p>
+      <p class="claim" data-type="prediction"><span class="tag">Prediction</span> My guess is that electricity and outages will limit AI more than rogue software will. The IEA itself notes large uncertainty, and better efficiency could lower demand. Either way, people will still need to supervise automated systems.</p>
+    </section>
+
+    <section id="how">
+      <h2><span class="num">05</span> How this website was made</h2>
+      <p>I built the page around three questions: what is AI, what can go wrong, and what comes next. Every paragraph has a label, Fact, Interpretation or Prediction, so readers can separate evidence from opinion. The buttons at the top highlight one type at a time.</p>
+      <p>The style is warm paper, dark ink and one orange accent, chosen for contrast and a calm editorial feel. One CSS grid collapses to a single column on phones. I used semantic landmarks, visible focus outlines, a skip link and an SVG diagram with alternative text. JavaScript only powers the highlighter, and <code>aria-pressed</code> announces the active button.</p>
+      <p>I used Claude to find sources, propose the structure and draft the first code. I then checked each figure against its source and removed claims I could not verify. I tested by resizing the window and using only the keyboard, and I shortened the text to fit the 1,000-word limit.</p>
+      <p class="ack"><strong>AI acknowledgement:</strong> I acknowledge the use of Claude (Anthropic, <a href="https://claude.ai">claude.ai</a>) to brainstorm the structure, research sources and draft code. I checked the facts, edited the content and tested the code. The final work is my responsibility.</p>
+    </section>
+
+    <section id="sources">
+      <h2><span class="num">06</span> Sources</h2>
+      <ol class="sources">
+        <li id="s1"><a href="https://oecd.ai/en/wonk/definition">OECD.AI, What is AI? How does one define AI?</a></li>
+        <li id="s2"><a href="https://www.iea.org/news/ai-is-set-to-drive-surging-electricity-demand-from-data-centres-while-offering-the-potential-to-transform-how-the-energy-sector-works">IEA, AI is set to drive surging electricity demand from data centres</a></li>
+        <li id="s3"><a href="https://www.nist.gov/news-events/news/2023/01/nist-risk-management-framework-aims-improve-trustworthiness-artificial">NIST, AI Risk Management Framework (AI RMF 1.0)</a></li>
+        <li id="s4"><a href="https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk">CNN, Arup revealed as victim of $25 million deepfake scam</a></li>
+        <li id="s5"><a href="https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf">OpenAI, Hugging Face Incident Technical Report</a></li>
+        <li id="s6"><a href="https://www.malwarebytes.com/blog/news/2026/07/openais-agent-escaped-its-sandbox-during-a-security-test">Malwarebytes, OpenAI's agent escaped its sandbox during a security test</a></li>
+        <li id="s7"><a href="https://www.reuters.com/business/retail-consumer/amazons-cloud-unit-hit-by-least-two-outages-involving-ai-tools-ft-says-2026-02-20/">Reuters, Amazon's cloud unit hit by outage involving AI tools</a></li>
+        <li id="s8"><a href="https://www.iea.org/reports/energy-and-ai/executive-summary">IEA, Energy and AI: executive summary</a></li>
+        <li id="s9"><a href="https://www.reuters.com/sustainability/boards-policy-regulation/americas-largest-power-grid-is-struggling-meet-demand-ai-2025-07-09/">Reuters, America's largest power grid is struggling to meet demand from AI</a></li>
+        <li id="s10"><a href="https://thedailyrecord.com/2026/02/13/pjm-plan-data-center-power-deals-ai-demand/">Reuters (via The Daily Record), PJM plan could accelerate data center power deals</a></li>
+        <li id="s11"><a href="https://in.marketscreener.com/news/cloudflare-says-dashboard-outage-issue-is-fixed-ce7d51dcda8ef023">Reuters (via MarketScreener), Cloudflare says dashboard outage issue is fixed</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Last checked 30 October 2026.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
